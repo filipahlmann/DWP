@@ -1,0 +1,210 @@
+body {
+    justify-content: center;
+    margin: 0px;
+
+}
+
+.navi {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    background-color: #303030;
+    display: flex;
+justify-content: center;
+text-decoration: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 25px 20px 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-flow: row wrap;
+
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-flow: row wrap;
+}
+
+.index-categories {
+    background-color: white;
+    padding: 10px;
+}
+
+
+section.signup-form {
+
+    display: block;
+    justify-content: center;
+    flex-flow: row wrap;
+    height: 500px;
+}
+
+.signup-class {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-flow: row wrap;
+    height: 40px;
+    flex-flow: row wrap;
+    width: 300px;
+    
+}
+
+form.signup-class input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    border-color: grey;
+    border-style: solid;
+    color: none;
+    width: 250px;
+
+}
+
+form.signup-class button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    border-color: grey;
+    border-style: solid;
+    width: 250px;
+
+}
+
+
+h2 {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.contact-form {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-form input {
+    display: block;
+    padding: 15px;
+    font-size: 17px;
+    border: 2px solid #D2D2D7;
+    width: 100%;
+    border-radius: 12px;
+    margin: 10px 0px;
+}
+
+.contact-form textarea {
+    display: block;
+    padding: 15px;
+    font-size: 17px;
+    border: 2px solid #D2D2D7;
+    width: 100%;
+    border-radius: 12px;
+    margin: 10px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-form button {
+    display: block;
+    width: auto;
+    background: #0171E2;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+    border: #0171E2;
+    font-size: 17px;
+}
+
+.login-form {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form input {
+    display: block;
+    padding: 15px;
+    font-size: 17px;
+    border: 2px solid #D2D2D7;
+    width: 100%;
+    border-radius: 12px;
+    margin: 10px 0px;
+}
+
+.login-form textarea {
+    display: block;
+    padding: 15px;
+    font-size: 17px;
+    border: 2px solid #D2D2D7;
+    width: 100%;
+    border-radius: 12px;
+    margin: 10px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form button {
+    display: block;
+    width: auto;
+    background: #0171E2;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+    border: #0171E2;
+    font-size: 17px;
+}
+
+footer {
+        background-color: #F5F5F7;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+    }
+
+#footer_container {
+   width: 90%;
+   display: flex;
+}
+
+.footer_box {
+    padding: 30px;
+}
+

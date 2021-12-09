@@ -1,40 +1,39 @@
-<?php // Contact information
+<?php
 include_once '../includes/dbh.inc.php';
 
 if (isset($_GET['id']) && is_numeric($_GET['id']) ) { 
-$query = "SELECT title, phone, mail FROM ContactInformation WHERE contactID={$_GET['id']}";
+$query = "SELECT title, description FROM news WHERE newsID={$_GET['id']}";
 if ($r = mysqli_query($conn, $query)) {
 
 $row = mysqli_fetch_array($r); print 
-'<form action="edit-footer.php" method="post"> 
-<p>Title: <input type="text" name="title" size="40" maxsize="100" value="' .htmlentities($row['title']) . '" /></p>
-<p>Textarea1: <textarea name= "phone" cols="40" rows="5">' . htmlentities($row['phone']) . '</textarea></p>
-<p>Textarea2: <textarea name= "mail" cols="40" rows="5">' . htmlentities($row['mail']) . '</textarea></p>
+'<form action="edit-index.php" method="post">
+<p>Entry Title: <input type=
+"text" name="title" size="40" maxsize="100" value="' .
+htmlentities($row['title']) . '" /></p>
+<p>Entry title: <textarea name= "description" cols="40" rows="5">' . htmlentities($row['description']) . '</textarea></p>
 <input type="hidden" name="id" value="' . $_GET['id'] . '">
-<input type="submit" name="submit" value="Update OpeningHours!">
+<input type="submit" name="submit" value="Update this Entry!">
 </form>';
 
-} else { 
+} else { // Couldn't get the information.
     print '<p style="color: red;"> Could not retrieve the blog entry because: <br>' .
     mysqli_error($conn) . '.
     </p><p>The query being run
     was: ' . $query . '</p>'; }
 
-} elseif (isset($_POST['contactID']) && is_numeric($_POST['contactID'])) {
+} elseif (isset($_POST['id']) && is_numeric($_POST['id'])) {
 
 $problem = FALSE;
-if (!empty($_POST['title']) && !empty($_POST['phone']) && !empty($_POST['mail']) ) {
+if (!empty($_POST['title']) && !empty($_POST['description'])) {
 $title = mysqli_real_escape_string($conn, trim(strip_tags ($_POST ['title'])));
-$phone = mysqli_real_escape_string($conn, trim(strip_tags ($_POST ['phone'])));
-$mail = mysqli_real_escape_string($conn, trim(strip_tags ($_POST ['mail'])));
-
+$description = mysqli_real_escape_string($conn, trim(strip_tags ($_POST ['description'])));
 } else {
 print '<p style="color: red;"> Please submit both a title and an description.</p>';
 $problem = TRUE;
 }
 
 if (!$problem) {
-    $query = "UPDATE ContactInformation SET title='$title', phone='$phone', mail='$mail' WHERE contactID= {$_POST['id']}";
+    $query = "UPDATE news SET title='$title', description='$description' WHERE newsID= {$_POST['id']}";
     $r = mysqli_query($conn, $query);
     if (mysqli_affected_rows($conn) == 1) {
         print '<p>The frontpage has been updated.</p>';

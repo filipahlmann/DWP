@@ -109,4 +109,4 @@ CREATE TABLE Ordered (
     constraint PK_Ordered PRIMARY KEY (productID, orderID)
     FOREIGN KEY (Product) REFERENCES Product (webshopID)
     FOREIGN KEY (Order) REFERENCES Order (orderID)
-)
+)g

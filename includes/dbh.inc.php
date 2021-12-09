@@ -1,9 +1,9 @@
 <?php
 
 $serverName = "localhost";
-$dBUsername = "filipsdwp_dk";
-$dBPassword = "123456";
-$dBname = "filipsdwp_dk";
+$dBUsername = "root";
+$dBPassword = "";
+$dBname = "dwpDB";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBname);
 

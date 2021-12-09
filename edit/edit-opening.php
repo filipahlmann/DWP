@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<?php // OPENING HOURS!
+<?php // Opening hours
 include_once '../includes/dbh.inc.php';
 
 if (isset($_GET['id']) && is_numeric($_GET['id']) ) { 

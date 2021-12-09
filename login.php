@@ -3,12 +3,14 @@ include_once 'header.php'
 ?>
 
 <section class="signup-form">
-<h2>Log In</h2>
-<form class="login-form" action="includes/login.inc.php" method="post">
-    <input type="text" name="uid" placeholder="Username/Email...">
-    <input type="password" name="pwd" placeholder="Password...">
-    <button type="submit" name="submit" id="sendBtn">Log In</button>
-</form>
+<h3>LOG IN</h3>
+    <p>login in here</p>
+    <form class="login-form" action="includes/login.inc.php" method="post">
+    <input type="text" name="uid" placeholder="Username">
+    <input type="text" name="pwd" placeholder="Password">
+    <br>
+    <button type="submit" name="submit">LOGIN</button>
+    </form>
 <?php   
 if(isset($_GET["error"])){
     if($_GET["error"] == "emptyinput") {

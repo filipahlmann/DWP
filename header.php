@@ -8,8 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
   <div class="wrapper">  
 <nav>
 <div class="navi">
@@ -19,10 +18,11 @@ session_start();
     <li><a href="index.php">Home</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li><a href="products.php">Products</a></li>
-
+    <li><a href="checkout.php">Checkout</a></li>
 
 
     <?php 
+    
     if (isset($_SESSION["useruid"])) {
     echo "<li><a href='profile.php'>Orders</a></li>";
     echo "<li><a href='includes/logout.inc.php'>Log Out</a></li>";

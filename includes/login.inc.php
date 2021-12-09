@@ -1,21 +1,16 @@
-<?php 
+<?php
 
-if (isset($_POST["submit"])) {
-
-    $username = $_POST["uid"];
+if(isset($_POST["submit"])) 
+{
+    $uid = $_POST["uid"];
     $pwd = $_POST["pwd"];
 
-    require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    include "../classes/dbh.classes.php";
+    include "../classes/login.classes.php";
+    include "../classes/login-contr.classes.php";
+    $login = new LoginContr($uid, $pwd); 
 
-    if (emptyInputLogin($username, $pwd) !== false){
-        header("location: ../login.php?error=emptyinput");
-        exit(); 
-    }
-    loginUser($conn, $username, $pwd);
+    $login->loginUser();
 
-} 
-else{
-    header("Location: ../login.php");
-    exit();
+    header("location: ../index.php?error=none");
 }

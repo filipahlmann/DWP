@@ -51,7 +51,7 @@ if(isset($_POST['Submit']))
     if(!$errors)
     {
         $query = "INSERT INTO products (name, code, image, price
-						) VALUES ('{$name}','{$code}, {$image}, {$price}'
+						) VALUES ('{$name}', '{$code}', '{$image}', {'$price}'
 						)";
         $result = mysqli_query($conn, $query);
 

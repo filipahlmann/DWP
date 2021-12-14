@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Dbh {
+class Login extends dbh {
 
     protected function getUser($uid, $pwd) {
         $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid
@@ -29,13 +29,13 @@ class Login extends Dbh {
             exit();
         }
         elseif($checkPwd == true) {
-            $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid = ?
+            $stmt = $this->connect()->prepare('SELECT * FROM users users WHERE users_uid = ?
             OR users_email = ? AND users_pwd = ?;');
 
             if(!$stmt->execute(array($uid, $uid, $pwd))) {
                 $stmt = null;
                 header("Location: ../index.php?error=stmtfailed");
-                exit();
+                exit(); 
             } 
             if($stmt->rowCount() == 0) {
                 $stmt = null;

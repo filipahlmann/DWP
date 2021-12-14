@@ -1,17 +1,17 @@
 <?php
 include_once '../includes/dbh.inc.php';
 
-if (isset($_GET['id']) && is_numeric($_GET['id']) ) { 
-$query = "SELECT title, description FROM news WHERE newsID={$_GET['id']}";
+if (isset($_GET['newsID']) && is_numeric($_GET['newsID']) ) { 
+$query = "SELECT title, description FROM news WHERE newsID={$_GET['newsID']}";
 if ($r = mysqli_query($conn, $query)) {
 
 $row = mysqli_fetch_array($r); print 
-'<form action="edit-index.php" method="post">
+'<form action="edit-news.php" method="post">
 <p>Entry Title: <input type=
 "text" name="title" size="40" maxsize="100" value="' .
 htmlentities($row['title']) . '" /></p>
 <p>Entry title: <textarea name= "description" cols="40" rows="5">' . htmlentities($row['description']) . '</textarea></p>
-<input type="hidden" name="id" value="' . $_GET['id'] . '">
+<input type="hidden" name="newsID" value="' . $_GET['newsID'] . '">
 <input type="submit" name="submit" value="Update this Entry!">
 </form>';
 
@@ -21,7 +21,7 @@ htmlentities($row['title']) . '" /></p>
     </p><p>The query being run
     was: ' . $query . '</p>'; }
 
-} elseif (isset($_POST['id']) && is_numeric($_POST['id'])) {
+} elseif (isset($_POST['newsID']) && is_numeric($_POST['newsID'])) {
 
 $problem = FALSE;
 if (!empty($_POST['title']) && !empty($_POST['description'])) {
@@ -33,10 +33,11 @@ $problem = TRUE;
 }
 
 if (!$problem) {
-    $query = "UPDATE news SET title='$title', description='$description' WHERE newsID= {$_POST['id']}";
+    $query = "UPDATE news SET title='$title', description='$description' WHERE newsID= {$_POST['newsID']}";
     $r = mysqli_query($conn, $query);
     if (mysqli_affected_rows($conn) == 1) {
         print '<p>The frontpage has been updated.</p>';
+        print '<a href="../index.php">Back to homepage</a>';
         } else {
         print '<p style="color: red;"> Could not update the entry
         because:<br>' . mysqli_error ($conn) . '.</p><p>The query

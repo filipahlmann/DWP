@@ -1,16 +1,16 @@
 <?php // Contact information
 include_once '../includes/dbh.inc.php';
 
-if (isset($_GET['id']) && is_numeric($_GET['id']) ) { 
-$query = "SELECT title, phone, mail FROM ContactInformation WHERE contactID={$_GET['id']}";
+if (isset($_GET['contactID']) && is_numeric($_GET['contactID']) ) { 
+$query = "SELECT title, phone, mail FROM ContactInformation WHERE contactID={$_GET['contactID']}";
 if ($r = mysqli_query($conn, $query)) {
 
 $row = mysqli_fetch_array($r); print 
-'<form action="edit-footer.php" method="post"> 
+'<form action="edit-contact.php" method="post"> 
 <p>Title: <input type="text" name="title" size="40" maxsize="100" value="' .htmlentities($row['title']) . '" /></p>
 <p>Textarea1: <textarea name= "phone" cols="40" rows="5">' . htmlentities($row['phone']) . '</textarea></p>
 <p>Textarea2: <textarea name= "mail" cols="40" rows="5">' . htmlentities($row['mail']) . '</textarea></p>
-<input type="hidden" name="id" value="' . $_GET['id'] . '">
+<input type="hidden" name="contactID" value="' . $_GET['contactID'] . '">
 <input type="submit" name="submit" value="Update OpeningHours!">
 </form>';
 
@@ -34,10 +34,12 @@ $problem = TRUE;
 }
 
 if (!$problem) {
-    $query = "UPDATE ContactInformation SET title='$title', phone='$phone', mail='$mail' WHERE contactID= {$_POST['id']}";
+    $query = "UPDATE ContactInformation SET title='$title', phone='$phone', mail='$mail' WHERE contactID= {$_POST['contactID']}";
     $r = mysqli_query($conn, $query);
     if (mysqli_affected_rows($conn) == 1) {
         print '<p>The frontpage has been updated.</p>';
+        print '<a href="../index.php">Back to homepage</a>';
+
         } else {
         print '<p style="color: red;"> Could not update the entry
         because:<br>' . mysqli_error ($conn) . '.</p><p>The query

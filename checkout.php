@@ -1,62 +1,62 @@
-<?php
-session_start();
-if(!empty($_SESSION["cart_item"])) {
 
-foreach ($_SESSION["cart_item"] as $item){
-    ?>
-            <form method="post" action>
-            <td><strong><?php echo $item["name"]; ?></strong></td>
-            <td><?php echo $item["code"]; ?></td>
-            <td><?php echo $item["quantity"]; ?></td>
-            <td><?php echo $item["price"]." DKK"; ?></td>
-            <input type="submit" value="Add to cart" class="addBtn" /></div>
-            </tr>
-            </form>
-            <?php
-    };
-}
+<?php 
+    include('header.php');
+    include('addcustomer.php'); 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if(!empty($_SESSION["cart_item"])) {
-echo '<h3>Din ordre</h3>';
-
-}
-$errors=false;
-if(isset($_POST['Submit']))
-{
-
-$code = $item["code"]; 
-$quantity = $item["quantity"];
-$price = $item["price"];
-$name = $item["name"];
-if(!$errors)
+    if(!isset($_SESSION["cartItem"]) || empty($_SESSION["cartItem"]))
     {
-        $query = "INSERT INTO orders (name, code, quantity, price) 
-						) VALUES ('{$name}','{$code},'{$quantity},'{$price} '
-						)";
-        $result = mysqli_query($conn, $query);
+        header('location:index.php');
+        exit();
+    }
 
-        echo "<h1>Image succesfully uploaded!</h1>";
-    }else{
-        $image = "";
-    }}
+    require_once('./includes/helpers.php');  
+
+    //pre($_SESSION);
+
+   
 
 ?>
+          <table cellpadding="10" cellspacing="1">
+<tbody>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Price</strong></th>
+<th><strong>Action</strong></th>
+</tr>	
+<?php		
+    foreach ($_SESSION["cartItem"] as $item){
+		?>
+				<tr>
+				<td><strong><?php echo $item["name"]; ?></strong></td>
+				<td><?php echo $item["code"]; ?></td>
+				<td><?php echo $item["quantity"]; ?></td>
+				<td><?php echo $item["price"]." DKK"; ?></td>
 
-<input name="Submit" type="submit" value="Submit">
+
+        <?php   $item_total = 0;
+          $item_total += ($item["price"]*$item["quantity"]);
+          $item_total;
+          include('addcustomerOrder.php'); 
+
+         ?>
+         
+				<td><a href="products.php?action=remove&code=<?php echo $item["code"]; ?>" class="removeBtn">Remove</a></td>
+				</tr>
+        <?php			
+         $product_name = $item["name"]; 
+         $product_code = $item["code"]; 
+         $quantity = $item["quantity"]; 
+         $product_price = $item["price"]." DKK";
+
+      
+
+
+		}		
+		?>
+<tr>
+</tr>
+</tbody>
+</table>	
+<?php include('footer.php'); ?>

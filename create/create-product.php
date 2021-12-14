@@ -1,4 +1,4 @@
-<?php require_once("includes/dbh.inc.php"); ?>
+<?php require_once("../includes/dbh.inc.php"); ?>
 <html>
 <body>
 <?php
@@ -51,7 +51,7 @@ if(isset($_POST['Submit']))
     if(!$errors)
     {
         $query = "INSERT INTO products (name, code, image, price
-						) VALUES ('{$name}', '{$code}', '{$image}', {'$price}'
+						) VALUES ('{$name}', '{$code}', '{$image}', '{$price}'
 						)";
         $result = mysqli_query($conn, $query);
 

@@ -1,6 +1,7 @@
 <?php
 
-require '../class/contact.class.php';
+include "class/contact.class.php";
+
 
 $email = new ContactSubmit();
 
@@ -19,5 +20,5 @@ Message: " . $_POST['message'] . "
 $email->sendMail();
 
 //Redirect
-$email->redirect("../form.php");
+$email->redirect("form.php");
 

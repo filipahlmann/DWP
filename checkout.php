@@ -1,6 +1,6 @@
+<?php include('header.php'); ?>
 
 <?php 
-    include('header.php');
     include('addcustomer.php'); 
 
     if(!isset($_SESSION["cartItem"]) || empty($_SESSION["cartItem"]))

@@ -12,11 +12,14 @@
             "<h3>{$row['title']}</h3>
             <p>{$row['textfieldOne']}</p>
             <p>{$row['textfieldTwo']}</p>
-            <p>{$row['textfieldThree']}</p>
+            <p>{$row['textfieldThree']}</p>";
 
-            <a href=\"edit/edit-opening.php?openingHoursID= {$row['openingHoursID']}\">Edit</a></p>\n
+            if (isset($_SESSION["userid"])) {
+
+            echo "<a href=\"edit/edit-opening.php?openingHoursID= {$row['openingHoursID']}\">Edit</a></p>\n
             <a href=\"delete/delete-opening.php?openingHoursID= {$row['openingHoursID']}\">delete</a></p>\n
             <a href=\"create/create-opening.php?openingHoursID= {$row['openingHoursID']}\">create</a></p>\n";
+            }
 
             }
 
@@ -36,10 +39,13 @@
             "<h3>{$row['title']}</h3>
             <p>{$row['phone']}</p>
             <p>{$row['mail']}</p>
+            ";
+            if (isset($_SESSION["userid"])) {
 
-            <a href=\"edit/edit-contact.php?contactID= {$row['contactID']}\">Edit</a></p>\n
+            echo "<a href=\"edit/edit-contact.php?contactID= {$row['contactID']}\">Edit</a></p>\n
             <a href=\"delete/delete-contact.php?contactID= {$row['contactID']}\">delete</a></p>\n
             <a href=\"create/create-contact.php?contactID= {$row['contactID']}\">create</a></p>\n";
+            }
 
             }
 

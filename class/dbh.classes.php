@@ -4,9 +4,9 @@ class Dbh {
 
    protected function connect() {
        try {
-        $username = "root";
-        $password = "";
-        $dbh = new PDO('mysql:host=localhost;dbname=dwpDB', $username, $password);
+        $username = "filipsdwp_dk";
+        $password = "ynj35ksw";
+        $dbh = new PDO('mysql:host=filipsdwp.dk.mysql;dbname=filipsdwp_dk', $username, $password);
         return $dbh; 
        }
        catch (PDOException $e) {

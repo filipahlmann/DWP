@@ -1,9 +1,9 @@
 <?php
 class DBController {
-	private $host = "localhost";
-	private $user = "root";
-	private $password = "";
-	private $database = "dwpDB";
+	private $host = "filipsdwp.dk.mysql";
+	private $user = "filipsdwp_dk";
+	private $password = "ynj35ksw";
+	private $database = "filipsdwp_dk";
 	private $conn;
 	
 	function __construct() {

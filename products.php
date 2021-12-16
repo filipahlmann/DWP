@@ -106,9 +106,10 @@ if(isset($_SESSION["cartItem"])){
 			<div><strong><?php echo $product_array[$aNumber]["name"]; ?></strong></div>
 			<div class="product-price"><?php echo $product_array[$aNumber]["price"]." DKK"; ?></div>
 	
-			<?php     if (isset($_SESSION["userid"])) {
+			<?php 
+			if (isset($_SESSION["userid"])) {
 
-				echo "<a href=\"edit/edit-products.php?ID= {$product_array[$aNumber]['ID']}\">Edit</a></p>\n"; 
+			echo "<a href=\"edit/edit-products.php?ID= {$product_array[$aNumber]['ID']}\">Edit</a></p>\n"; 
 				 ?><br>
 			<?php echo "<a href=\"delete/delete-products.php?ID= {$product_array[$aNumber]['ID']}\">Delete</a></p>\n"; }?>
 			<div>

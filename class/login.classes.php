@@ -16,7 +16,7 @@ class Login extends dbh {
         {
             $stmt = null;
             header("location: ../index.php?error=usernotfound");
-            exit();
+            exit(); 
         } 
 
         $pwdHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);

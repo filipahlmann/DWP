@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS dwpDB1;
-CREATE DATABASE dwpDB1;
-USE dwpDB1;
+DROP DATABASE IF EXISTS filipsdwp_dk;
+CREATE DATABASE filipsdwp_dk;
+USE filipsdwp_dk;
 
 CREATE TABLE `Postalcode` (
     postalcodeID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
